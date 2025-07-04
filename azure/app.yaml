@@ -1,0 +1,113 @@
+id: /subscriptions/fe26afb3-29e5-4ead-a3a8-4775d18afe8a/resourceGroups/synai-demo001-rg/providers/Microsoft.App/containerapps/synai-demo001-container-app
+identity:
+  type: None
+location: UK West
+name: synai-demo001-container-app
+properties:
+  configuration:
+    activeRevisionsMode: Single
+    dapr: null
+    identitySettings: []
+    ingress:
+      additionalPortMappings: null
+      allowInsecure: false
+      clientCertificateMode: null
+      corsPolicy: null
+      customDomains: null
+      exposedPort: 0
+      external: true
+      fqdn: synai-demo001-container-app.icypebble-0e79b93c.ukwest.azurecontainerapps.io
+      ipSecurityRestrictions: null
+      stickySessions: null
+      targetPort: 8080
+      targetPortHttpScheme: null
+      traffic:
+      - latestRevision: true
+        weight: 100
+      transport: Auto
+    maxInactiveRevisions: null
+    registries:
+    - identity: ''
+      passwordSecretRef: ghcrio-richardbushnell
+      server: ghcr.io
+      username: richardbushnell
+    revisionTransitionThreshold: null
+    runtime: null
+    secrets:
+    - name: ghcrio-richardbushnell
+    service: null
+    targetLabel: ''
+  customDomainVerificationId: 1D6E118832240C34C82E8D33734DA7999277834A62E1D4E9ECCA0E0BF39C76A9
+  delegatedIdentities: []
+  environmentId: /subscriptions/fe26afb3-29e5-4ead-a3a8-4775d18afe8a/resourceGroups/synai-demo001-rg/providers/Microsoft.App/managedEnvironments/synai-demo001-container-environment
+  eventStreamEndpoint: https://ukwest.azurecontainerapps.dev/subscriptions/fe26afb3-29e5-4ead-a3a8-4775d18afe8a/resourceGroups/synai-demo001-rg/containerApps/synai-demo001-container-app/eventstream
+  latestReadyRevisionName: synai-demo001-container-app--my0a1yq
+  latestRevisionFqdn: synai-demo001-container-app--my0a1yq.icypebble-0e79b93c.ukwest.azurecontainerapps.io
+  latestRevisionName: synai-demo001-container-app--my0a1yq
+  managedEnvironmentId: /subscriptions/fe26afb3-29e5-4ead-a3a8-4775d18afe8a/resourceGroups/synai-demo001-rg/providers/Microsoft.App/managedEnvironments/synai-demo001-container-environment
+  outboundIpAddresses:
+  - 51.141.120.108
+  - 51.141.107.116
+  - 51.141.116.234
+  - 51.141.106.242
+  - 51.137.155.243
+  - 51.137.155.216
+  - 51.137.159.170
+  - 51.137.159.201
+  - 51.137.159.183
+  - 51.137.152.113
+  - 20.254.136.131
+  - 20.254.136.22
+  - 51.142.191.79
+  - 20.254.136.110
+  - 20.254.245.147
+  - 20.254.245.38
+  - 20.254.245.165
+  - 20.254.242.177
+  - 20.254.245.167
+  - 20.254.245.171
+  - 20.162.25.155
+  patchingMode: Automatic
+  provisioningState: Succeeded
+  runningStatus: Running
+  template:
+    containers:
+    - env:
+      - name: WEBUI_NAME
+        value: Demo Site 1
+      - name: ENABLE_PERSISTENT_CONFIG
+        value: 'False'
+      image: ghcr.io/tudutu/open-webui:latest
+      imageType: ContainerImage
+      name: synai-demo001-container-app
+      resources:
+        cpu: 0.5
+        ephemeralStorage: 2Gi
+        memory: 1Gi
+      volumeMounts:
+      - volumeName: demo001-azure-file-volume
+        mountPath: /app/backend/data
+    initContainers: null
+    revisionSuffix: ''
+    scale:
+      cooldownPeriod: 300
+      maxReplicas: 1
+      minReplicas: 1
+      pollingInterval: 30
+      rules: null
+    serviceBinds: null
+    terminationGracePeriodSeconds: null
+    volumes:
+    - name: demo001-azure-file-volume
+      storageName: synaidemo001storagemount
+      storageType: AzureFile
+  workloadProfileName: Consumption
+resourceGroup: synai-demo001-rg
+systemData:
+  createdAt: '2025-07-02T13:27:33.5737529'
+  createdBy: richard.bushnell@tudutu.com
+  createdByType: User
+  lastModifiedAt: '2025-07-02T14:00:07.6031008'
+  lastModifiedBy: richard.bushnell@tudutu.com
+  lastModifiedByType: User
+type: Microsoft.App/containerApps

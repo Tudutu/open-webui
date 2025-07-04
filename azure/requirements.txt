@@ -1,0 +1,6 @@
+# Azure SDKs and dependencies
+azure-identity==1.21.0
+azure-mgmt-appcontainers
+azure-mgmt-resource
+azure-mgmt-storage
+azure-storage-blob==12.24.1
